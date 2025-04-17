@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Reversi</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>JavaScript Reversi</h1>
+  </header>
+  <main>
+    <div class="board" id="board"></div>
+    <div class="controls">
+      <button id="undo" disabled>Undo</button>
+      <div class="player-info">
+        <div class="player white">
+          <span id="whitepointer" class="pointer" aria-hidden="true">►</span>
+          <span id="whiteline" class="player-label" data-player="white" title="Click to play as white">White:</span>
+          <span id="whitenum"> 2</span>
+          <span id="whitecomputer" class="computer">computer</span>
+        </div>
+        <div class="player black">
+          <span id="blackpointer" class="pointer" aria-hidden="true">►</span>
+          <span id="blackline" class="player-label" data-player="black" title="Click to play as black">Black:</span>
+          <span id="blacknum"> 2</span>
+          <span id="blackcomputer" class="computer" hidden>computer</span>
+        </div>
+      </div>
+      <button id="pass">Pass</button>
+    </div>
+  </main>
+  <footer>
+  </footer>
+  <script src="js/reversi.js"></script>
+</body>
+</html>
