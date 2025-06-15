@@ -39,7 +39,7 @@
   <script src="js/reversi.js"></script>
   <script>
     // Fetch counter value from counter.txt
-    fetch('reversi/counter.txt')
+    fetch('counter.txt')
       .then(response => response.text())
       .then(data => {
         document.getElementById('hit-counter').textContent = data.trim();
