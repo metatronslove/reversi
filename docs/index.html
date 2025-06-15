@@ -35,5 +35,27 @@
   <footer>
   </footer>
   <script src="js/reversi.js"></script>
+  <script>
+    // Fetch counter value from counter.txt
+    fetch('/counter.txt')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('hit-counter').textContent = data.trim();
+      })
+      .catch(error => console.error('Error fetching counter:', error));    
+    // Trigger workflow to increment counter
+    fetch('https://api.github.com/repos/your-username/your-repo/dispatches', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ${YOUR_PERSONAL_ACCESS_TOKEN}',
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: JSON.stringify({
+        event_type: 'increment_counter'
+      })
+    })
+      .catch(error => console.error('Error triggering workflow:', error));
+  </script>
 </body>
 </html>
