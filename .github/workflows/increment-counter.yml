@@ -24,5 +24,5 @@ jobs:
       - name: Commit and push
         run: actions-js/push@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           message: "Update hit counter to ${{ env.NEW_COUNTER }}"
