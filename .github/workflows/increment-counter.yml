@@ -10,19 +10,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Read counter
-        id: read_counter
+      - name: Read and update counter
         run: |
-          COUNTER=$(cat docs/counter.txt)
+          COUNTER=$(cat counter.txt)
           NEW_COUNTER=$((COUNTER + 1))
-          echo "NEW_COUNTER=$NEW_COUNTER" >> $GITHUB_ENV
-          echo "Updated counter to $NEW_COUNTER"
+          echo $NEW_COUNTER > counter.txt
 
-      - name: Update counter file
-        run: echo "${{ env.NEW_COUNTER }}" > docs/counter.txt
-
-      - name: Commit and push
-        run: actions-js/push@master
+      - name: Commit and push changes
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          message: "Update hit counter to ${{ env.NEW_COUNTER }}"
+          branch: ${{ github.ref }}
