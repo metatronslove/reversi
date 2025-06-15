@@ -1,0 +1,28 @@
+name: Increment Hit Counter
+on:
+  repository_dispatch:
+    types: [increment_counter]
+
+jobs:
+  update-counter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Read counter
+        id: read_counter
+        run: |
+          COUNTER=$(cat docs/counter.txt)
+          NEW_COUNTER=$((COUNTER + 1))
+          echo "NEW_COUNTER=$NEW_COUNTER" >> $GITHUB_ENV
+          echo "Updated counter to $NEW_COUNTER"
+
+      - name: Update counter file
+        run: echo "${{ env.NEW_COUNTER }}" > docs/counter.txt
+
+      - name: Commit and push
+        run: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: "Update hit counter to ${{ env.NEW_COUNTER }}"
