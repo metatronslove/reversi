@@ -12,9 +12,9 @@ jobs:
 
       - name: Read and update counter
         run: |
-          COUNTER=$(cat /docs/counter.txt)
+          COUNTER=$(cat docs/counter.txt)
           NEW_COUNTER=$((COUNTER + 1))
-          echo $NEW_COUNTER > /docs/counter.txt
+          echo $NEW_COUNTER > docs/counter.txt
 
       - name: Commit and push changes
         uses: ad-m/github-push-action@master
