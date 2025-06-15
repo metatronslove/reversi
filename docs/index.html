@@ -39,7 +39,7 @@
   <script src="js/reversi.js"></script>
   <script>
     // Fetch counter value from counter.txt
-    fetch('/counter.txt')
+    fetch('https://metatronslove.github.io/reversi/counter.txt')
       .then(response => response.text())
       .then(data => {
         document.getElementById('hit-counter').textContent = data.trim();
@@ -49,7 +49,7 @@
     fetch('https://api.github.com/repos/metatronslove/reversi/dispatches', {
       method: 'POST',
       headers: {
-        'Authorization': 'Bearer ${YOUR_PERSONAL_ACCESS_TOKEN}',
+        'Authorization': 'Bearer ${PERSONAL_ACCESS_TOKEN}',
         'Content-Type': 'application/json',
         'Accept': 'application/vnd.github.v3+json'
       },
