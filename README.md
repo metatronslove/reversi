@@ -79,4 +79,12 @@ MIT Lisansı altında dağıtılmaktadır. Detaylar için [LICENSE](LICENSE) dos
 
 ---
 
+## ☕ Destek Olun / Support
+
+Projemi beğendiyseniz, bana bir kahve ısmarlayarak destek olabilirsiniz!
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/metatronslove)
+
+Teşekkürler! 🙏
+
 **Not:** Orijinal kod ve tarihçe için [David Bau'nun makalesini](http://davidbau.com/archives/2009/08/23/javascript_reversi.html) ziyaret edin.
