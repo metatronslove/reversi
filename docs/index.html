@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript Reversi</title>
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>🔷</text></svg>">
+    
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JavaScript Reversi">
+  <meta property="og:description" content="Ancient Game Against Artificial Intellegence">
+  <meta property="og:image" content="https://metatronslove.github.io/reversi/og-image.png">
+  <meta property="og:url" content="https://metatronslove.github.io/reversi/">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="css/styles.css">
   <script data-name="BMC-Widget" 
         data-cfasync="false" 
@@ -44,30 +54,7 @@
     </div>
   </main>
   <footer>
-  <!-- Display Hit Counter -->
-  <p>Page Views: <span id="hit-counter">Loading...</span></p>
   </footer>
   <script src="js/reversi.js"></script>
-  <script>
-    // Fetch counter value from counter.txt
-    fetch('counter.txt')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('hit-counter').textContent = data.trim();
-      })
-      .catch(error => console.error('Error fetching counter:', error));    
-    // Trigger workflow to increment counter
-    fetch('https://api.github.com/repos/metatronslove/reversi/dispatches', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/vnd.github.v3+json'
-      },
-      body: JSON.stringify({
-        event_type: 'increment_counter'
-      })
-    })
-      .catch(error => console.error('Error triggering workflow:', error));
-  </script>
 </body>
 </html>
